@@ -13,6 +13,7 @@ COPY --from=builder /go/dispatcher /
 COPY static /static/
 ADD https://get.aquasec.com/microscanner /
 RUN chmod +x /microscanner
-ENV token
+ARG token
+ENV token ${token}
 RUN /microscanner ${token} --html
-
+RUN echo $token
