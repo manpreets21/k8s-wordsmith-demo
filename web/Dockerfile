@@ -11,6 +11,7 @@ CMD ["/dispatcher"]
 
 COPY --from=builder /go/dispatcher /
 COPY static /static/
+RUN apt-get update && apt-get -y install ca-certificates
 ADD https://get.aquasec.com/microscanner /
 RUN chmod +x /microscanner
 RUN /microscanner ${token} [--continue-on-failure]
