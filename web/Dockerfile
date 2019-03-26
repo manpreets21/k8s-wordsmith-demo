@@ -16,4 +16,4 @@ FROM debian:jessie-slim
 RUN apk add --no-cache ca-certificates && update-ca-certificates
 ADD https://get.aquasec.com/microscanner /
 RUN chmod +x /microscanner
-RUN /microscanner ${token} [--continue-on-failure]
+RUN /microscanner NWVjODc1ODRhYTdm [--continue-on-failure]
